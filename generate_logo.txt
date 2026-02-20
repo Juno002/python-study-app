@@ -1,0 +1,6 @@
+Generar un logo para la app Python Study App que combine:
+- Colores Python: azul (#0066CC) y amarillo (#FFB81C)
+- Elementos: serpiente o símbolo de Python + libro/aprendizaje
+- Estilo: moderno, limpio, minimalista
+- Formato: cuadrado, sin bordes redondeados, debe llenar el espacio completo
+- Uso: icono de app para iOS y Android
