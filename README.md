@@ -1,6 +1,10 @@
 # Python Study App 🐍📚
 
-Una aplicación móvil moderna para aprender Python a tu propio ritmo, con planes de estudio personalizados, editor de código integrado y exámenes automáticos generados por IA.
+Una aplicación moderna (móvil y web) para aprender Python a tu propio ritmo, con planes de estudio personalizados, editor de código integrado y exámenes automáticos generados por IA.
+
+**🌐 Disponible en:** [Versión Web](#despliegue-en-vercel) | 📱 iOS/Android (Expo Go)
+
+**Demo en vivo:** Próximamente en Vercel
 
 ## Características Principales
 
@@ -105,7 +109,7 @@ python-study-app/
 | **Progreso** | Estadísticas, racha y historial de cuestionarios |
 | **Configuración** | Preferencias de usuario y opciones de datos |
 
-## Instalación
+## Instalación Local
 
 ### Requisitos
 - Node.js 18+ y npm/pnpm
@@ -140,6 +144,26 @@ pnpm dev
    - **iOS:** Escanea el código QR con la cámara
    - **Android:** Escanea el código QR con Expo Go
    - **Web:** Abre el navegador en `http://localhost:8081`
+
+### Desarrollo Web Solo
+
+Para desarrollar solo la versión web:
+
+```bash
+pnpm dev:web
+```
+
+Luego abre `http://localhost:8081` en tu navegador.
+
+### Build Web para Producción
+
+Para crear un build optimizado para web:
+
+```bash
+pnpm build:web
+```
+
+Los archivos compilados estarán en `dist/web/`.
 
 ## Uso
 
@@ -196,6 +220,41 @@ POST /api/quiz/generate
   Response: { questions: QuizQuestion[] }
 ```
 
+## Despliegue en Vercel
+
+### Despliegue Automático (Recomendado)
+
+1. Ve a [vercel.com](https://vercel.com) e inicia sesión
+2. Haz clic en "New Project"
+3. Selecciona "Import Git Repository"
+4. Busca y selecciona `Juno002/python-study-app`
+5. En "Environment Variables", agrega:
+   - `OPENAI_API_KEY`: Tu clave API de OpenAI
+6. Haz clic en "Deploy"
+
+Vercel compilará y desplegará automáticamente tu aplicación. Recibirás una URL pública (ej: `https://python-study-app.vercel.app`).
+
+### Despliegue Manual
+
+Ver [DEPLOYMENT.md](./DEPLOYMENT.md) para instrucciones detalladas.
+
+### Características del Despliegue
+
+- ✅ Compilación automática con `pnpm build:web`
+- ✅ Caché optimizado para archivos estáticos
+- ✅ Headers de seguridad (CORS, X-Frame-Options, etc.)
+- ✅ CDN global para máxima velocidad
+- ✅ Despliegues automáticos en cada push a `main`
+- ✅ Rollback fácil a versiones anteriores
+
+### Monitoreo
+
+En el dashboard de Vercel puedes:
+- Ver logs de compilación
+- Monitorear el rendimiento
+- Gestionar dominios personalizados
+- Configurar variables de entorno
+
 ## Características Futuras
 
 - ☐ Sincronización con la nube
@@ -225,9 +284,20 @@ Este proyecto está bajo la licencia MIT. Ver el archivo `LICENSE` para más det
 
 Creado con ❤️ para estudiantes de Python
 
+## Plataformas Soportadas
+
+| Plataforma | Estado | Instrucciones |
+|-----------|--------|---------------|
+| **Web** | ✅ Listo | [Despliegue en Vercel](#despliegue-en-vercel) |
+| **iOS** | ✅ Listo | Escanea QR con cámara en desarrollo local |
+| **Android** | ✅ Listo | Usa Expo Go app |
+| **Desktop** | 🔄 Próximamente | Electron/Tauri |
+
 ## Soporte
 
-Si encuentras problemas o tienes sugerencias, abre un issue en GitHub.
+Si encuentras problemas o tienes sugerencias:
+- Abre un [issue en GitHub](https://github.com/Juno002/python-study-app/issues)
+- Consulta [DEPLOYMENT.md](./DEPLOYMENT.md) para problemas de despliegue
 
 ---
 
